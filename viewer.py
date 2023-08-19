@@ -1,6 +1,6 @@
 from tkinter import *
 from PIL import Image
-import time, os, sys
+import os, sys
 root = Tk()
 
 params = ''.join(sys.argv[1:])
@@ -22,7 +22,7 @@ if pair[0] == "folder":
 		files = [f"{folder}{f.name}" for f in os.scandir(folder)]
 	else:
 		f = os.scandir(folder)
-		#files = [f"{folder}{f.name}" for f in os.scandir(folder)[0:range]]
+		
 		files = []
 		global b
 		if type(rng) == tuple:
@@ -41,6 +41,7 @@ elif pair[0] == "files":
 else:
 	print("choose an option (folder or files)")
 	exit(0)
+	
 gifs = []
 for f in files:
 	frameCnt = Image.open(f).n_frames
@@ -56,7 +57,7 @@ img = 0
 ind = 0
 
 def press(key):
-	global img
+	global img, ind
 	name = key.keysym
 	if name == "Right":
 		img += 1
