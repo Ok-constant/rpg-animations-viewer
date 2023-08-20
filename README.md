@@ -20,6 +20,9 @@ Then make sure you have installed these packages using pip install [package name
 
 Making gifs<br>
 
++ [Making a single gif](#making-a-single-gif)
++ Other modes coming soon
+
 ### Making a single gif
 
 To make a single gif out of multiple frames, first you have to edit the `animation.json` file<br>
@@ -41,10 +44,10 @@ All of the games I've tried use this way to save frames for animations:<br>
 `[something]_[other details]_[animation number]_[frame number].[extension]`
 
 This is an example of some frames:<br>
-+ 01_monster_01_00.rpgmvp
-+ 01_monster_01_01.rpgmvp
-+ 01_monster_01_02.rpgmvp
-+ 01_monster_01_03.rpgmvp
++ `01_monster_01_00.rpgmvp`
++ `01_monster_01_01.rpgmvp`
++ `01_monster_01_02.rpgmvp`
++ `01_monster_01_03.rpgmvp`
 
 This is the first animation of a certain monster<br>
 You can see the animation has a range of numbers at the end, from 0 to 3<br>
@@ -65,4 +68,18 @@ By still using the example above, the animation.json file would be
 }
 ```
 
+Some games may not have multiple frames, for example you may have just
+
++ `01_monster_01_00.rpgmvp`
+
+In this case just edit the `range` field with `"0-0"`
+
+### How to run
+
+To run the project, after you've edited the `animation.json` file<br>
+Just run:<br>
+
+`python gif_maker.py animation.json`
+
 ## Gif viewer
+
